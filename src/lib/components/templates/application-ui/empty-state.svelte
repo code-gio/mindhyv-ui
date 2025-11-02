@@ -16,7 +16,7 @@
 	const DEFAULTS = getTemplateDefaults('empty-state') || {};
 
 	let {
-		icon = DEFAULTS.icon || Inbox,
+		icon: Icon = DEFAULTS.icon || Inbox,
 		title = DEFAULTS.title,
 		description = DEFAULTS.description,
 		actionText = DEFAULTS.actionText,
@@ -28,7 +28,7 @@
 	<Card>
 		<CardContent class="flex min-h-[400px] flex-col items-center justify-center p-12 text-center">
 			<div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-accent">
-				<svelte:component this={icon} class="size-8 text-muted-foreground" />
+				<Icon class="size-8 text-muted-foreground" />
 			</div>
 			{#if title}
 				<h3 class="mb-2 text-xl font-semibold text-foreground">{title}</h3>
@@ -44,4 +44,3 @@
 		</CardContent>
 	</Card>
 </div>
-

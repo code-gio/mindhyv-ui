@@ -12,6 +12,7 @@ export { default as HeroSignupForm } from './hero-signup-form.svelte';
 export { default as HeroSplitSignup } from './hero-split-signup.svelte';
 export { default as HeroCenteredInlineForm } from './hero-centered-inline-form.svelte';
 export { default as HeroSearchWithTags } from './hero-search-with-tags.svelte';
+export { default as HeroRoundedImageCarousel } from './hero-rounded-image-carousel.svelte';
 
 // Export registry
 export { HERO_REGISTRY, HERO_COMPONENTS } from './registry';

@@ -15,6 +15,7 @@ import HeroSignupForm from './hero-signup-form.svelte';
 import HeroSplitSignup from './hero-split-signup.svelte';
 import HeroCenteredInlineForm from './hero-centered-inline-form.svelte';
 import HeroSearchWithTags from './hero-search-with-tags.svelte';
+import HeroRoundedImageCarousel from './hero-rounded-image-carousel.svelte';
 
 /**
  * Hero component mapping for dynamic component loading
@@ -32,7 +33,8 @@ export const HERO_COMPONENTS: Record<string, TemplateComponent> = {
 	'hero-signup-form': HeroSignupForm as TemplateComponent,
 	'hero-split-signup': HeroSplitSignup as TemplateComponent,
 	'hero-centered-inline-form': HeroCenteredInlineForm as TemplateComponent,
-	'hero-search-with-tags': HeroSearchWithTags as TemplateComponent
+	'hero-search-with-tags': HeroSearchWithTags as TemplateComponent,
+	'hero-rounded-image-carousel': HeroRoundedImageCarousel as TemplateComponent
 };
 
 /**
@@ -631,5 +633,73 @@ export const HERO_REGISTRY: Template[] = [
 			categories: []
 		},
 		template: HeroSearchWithTags
+	},
+	{
+		id: 'hero-rounded-image-carousel',
+		name: 'Hero Rounded Image Carousel',
+		description:
+			'Full-width hero carousel with rounded corners, background images, and slide navigation',
+		icon: Image,
+		category: 'hero',
+		variant: 'full-width',
+		previewImage: '/templates/hero-rounded-image-carousel.png',
+		thumbnailImage: '/templates/thumbnails/hero-rounded-image-carousel.jpg',
+		tags: ['hero', 'carousel', 'slider', 'full-width', 'autoplay', 'navigation', 'landing-page'],
+		isPro: false,
+		complexity: 'moderate',
+		features: [
+			'Responsive Design',
+			'Dark Mode Support',
+			'Image Carousel',
+			'Slide Navigation',
+			'Autoplay Support',
+			'Keyboard Navigation',
+			'Touch/Swipe Support',
+			'Progress Indicators',
+			'TypeScript Support',
+			'Accessibility (WCAG AA)'
+		],
+		darkModeSupport: true,
+		responsive: ['mobile', 'tablet', 'desktop'],
+		useCases: [
+			'Portfolio Showcases',
+			'Product Launches',
+			'Case Studies',
+			'Image Galleries',
+			'Marketing Websites'
+		],
+		dependencies: ['lucide-svelte'],
+		defaultProps: {
+			slides: [
+				{
+					imageUrl:
+						'https://images.unsplash.com/photo-1615615228002-890bb61cac6e?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3',
+					brand: 'Nike React',
+					title: "Rewriting sport's playbook for billions of athletes",
+					ctaText: 'Read Case Studies',
+					ctaHref: '#'
+				},
+				{
+					imageUrl:
+						'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3',
+					brand: 'CoolApps',
+					title: 'From mobile apps to gaming consoles',
+					ctaText: 'Read Case Studies',
+					ctaHref: '#'
+				},
+				{
+					imageUrl:
+						'https://images.unsplash.com/photo-1629666451094-8908989cae90?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3',
+					brand: 'Grumpy',
+					title: 'Bringing Art to everything',
+					ctaText: 'Read Case Studies',
+					ctaHref: '#'
+				}
+			],
+			autoplay: false,
+			autoplayInterval: 5000,
+			height: 'h-120 md:h-[calc(100vh-106px)]'
+		},
+		template: HeroRoundedImageCarousel
 	}
 ];
