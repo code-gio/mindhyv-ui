@@ -67,7 +67,7 @@
 <div
 	class="relative bg-linear-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent"
 >
-	<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+	<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 		<!-- Grid -->
 		<div class="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
 			<div>

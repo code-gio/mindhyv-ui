@@ -40,7 +40,7 @@
 </script>
 
 <div class="relative overflow-hidden">
-	<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 sm:py-24 lg:px-8">
+	<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-24 lg:px-8">
 		<div class="text-center">
 			<h1 class="text-4xl font-bold text-foreground sm:text-6xl">
 				{title}

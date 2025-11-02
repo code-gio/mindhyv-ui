@@ -17,7 +17,7 @@
 	let { title = DEFAULTS.title, faqs = DEFAULTS.faqs }: FaqWithIconsProps = $props();
 </script>
 
-<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 	<!-- Title -->
 	<div class="mx-auto mb-10 max-w-2xl lg:mb-14">
 		<h2 class="text-2xl font-bold text-foreground md:text-4xl md:leading-tight">{title}</h2>

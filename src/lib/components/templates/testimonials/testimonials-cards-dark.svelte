@@ -25,10 +25,10 @@
 </script>
 
 <div class="overflow-hidden {backgroundColor}">
-	<div class="relative mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+	<div class="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 		<!-- Title -->
 		<div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
-			<h2 class="text-2xl font-semibold text-white sm:text-3xl lg:text-4xl">
+			<h2 class="text-2xl font-semibold text-primary-foreground sm:text-3xl lg:text-4xl">
 				{title}
 			</h2>
 		</div>

@@ -30,7 +30,7 @@
 	}: FooterCenteredSocialsProps = $props();
 </script>
 
-<footer class="mx-auto mt-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
+<footer class="mx-auto mt-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
 	<div class="text-center">
 		<div>
 			<a
@@ -81,4 +81,3 @@
 		<p class="mt-5 text-sm text-muted-foreground">{copyright}</p>
 	</div>
 </footer>
-

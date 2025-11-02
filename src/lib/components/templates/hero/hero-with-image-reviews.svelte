@@ -79,7 +79,7 @@
 </script>
 
 <!-- Hero -->
-<div class="mx-auto max-w-340 px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 	<!-- Grid -->
 	<div class="grid gap-4 md:grid-cols-2 md:items-center md:gap-8 xl:gap-20">
 		<div>
@@ -209,7 +209,7 @@
 					onload={() => (isImageLoaded = true)}
 				/>
 				<div
-					class="absolute inset-0 -z-1 -ms-4 me-4 mt-4 -mb-4 size-full rounded-md bg-linear-to-tr from-muted via-background/0 to-background/0 lg:-ms-6 lg:me-6 lg:mt-6 lg:-mb-6"
+					class="absolute inset-0 -z-[1] -ms-4 me-4 mt-4 -mb-4 size-full rounded-md bg-gradient-to-tr from-muted via-background/0 to-background/0 lg:-ms-6 lg:me-6 lg:mt-6 lg:-mb-6"
 				></div>
 
 				<!-- SVG Decoration -->

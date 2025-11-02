@@ -21,7 +21,7 @@
 	}: FooterMinimalProps = $props();
 </script>
 
-<footer class="mx-auto mt-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
+<footer class="mx-auto mt-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
 	<div class="border-t border-border pt-8">
 		<div class="sm:flex sm:items-center sm:justify-between">
 			<div>

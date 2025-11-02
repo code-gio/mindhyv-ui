@@ -48,8 +48,8 @@
 	}
 </script>
 
-<footer class="bg-muted dark:bg-neutral-900">
-	<div class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
+<footer class="bg-muted dark:bg-primary">
+	<div class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
 		<!-- Grid -->
 		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 			<div class="lg:col-span-1">

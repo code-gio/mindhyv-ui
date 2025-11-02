@@ -54,7 +54,7 @@
 </script>
 
 <div class="overflow-hidden">
-	<div class="mx-auto max-w-[85rem] px-4 py-20 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
 		<div class="relative mx-auto grid max-w-4xl space-y-5 sm:space-y-10">
 			<!-- Title -->
 			<div class="text-center">
@@ -80,9 +80,9 @@
 							/>
 						{/each}
 						<span
-							class="inline-flex size-8 items-center justify-center rounded-full bg-neutral-800 ring-2 ring-background dark:bg-neutral-900"
+							class="inline-flex size-8 items-center justify-center rounded-full bg-neutral-800 ring-2 ring-background dark:bg-primary"
 						>
-							<span class="text-xs font-medium text-white uppercase">{totalUsers}</span>
+							<span class="text-xs font-medium text-primary-foreground uppercase">{totalUsers}</span>
 						</span>
 					</div>
 					<!-- End Avatar Group -->

@@ -20,7 +20,7 @@
 	}: TestimonialsWithImageProps = $props();
 </script>
 
-<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 	<div class="grid gap-6 md:grid-cols-2 md:items-center md:gap-10 lg:gap-16">
 		<div>
 			<blockquote class="relative">
@@ -40,7 +40,7 @@
 				</svg>
 
 				<div class="relative z-10">
-					<p class="text-xl italic text-foreground md:text-2xl md:leading-normal">
+					<p class="text-xl text-foreground italic md:text-2xl md:leading-normal">
 						{quote}
 					</p>
 				</div>
@@ -57,4 +57,3 @@
 		</div>
 	</div>
 </div>
-
