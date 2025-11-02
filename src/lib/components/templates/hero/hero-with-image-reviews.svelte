@@ -23,6 +23,20 @@
 
 	// Get defaults from template registry (single source of truth)
 	const DEFAULTS = getTemplateDefaults('hero-with-image-reviews') || {};
+	const DEFAULT_REVIEWS: Review[] = [
+		{
+			rating: 4.6,
+			totalReviews: '12k',
+			platform: 'Google',
+			platformLogo: 'google'
+		},
+		{
+			rating: 4.8,
+			totalReviews: '5k',
+			platform: 'Trustpilot',
+			platformLogo: 'trustpilot'
+		}
+	];
 
 	let {
 		title = DEFAULTS.title,
@@ -32,7 +46,7 @@
 		imageSrc = DEFAULTS.imageSrc,
 		imageAlt = DEFAULTS.imageAlt,
 		showReviews = DEFAULTS.showReviews,
-		reviews = DEFAULTS.reviews,
+		reviews = DEFAULT_REVIEWS,
 		ctaPrimaryText = DEFAULTS.ctaPrimaryText,
 		ctaPrimaryHref = DEFAULTS.ctaPrimaryHref,
 		ctaSecondaryText = DEFAULTS.ctaSecondaryText,
@@ -201,7 +215,7 @@
 				<!-- SVG Decoration -->
 				<div class="absolute start-0 bottom-0">
 					<svg
-						class="ms-auto h-auto w-2/3 text-background"
+						class="ms-auto h-auto w-2/3 text-muted"
 						width="630"
 						height="451"
 						viewBox="0 0 630 451"

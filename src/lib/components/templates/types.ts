@@ -1,5 +1,5 @@
 import type { Component } from 'svelte';
-import type { Icon as IconType } from 'lucide-svelte';
+import type { Icon as IconType } from '@lucide/svelte/icons';
 
 /**
  * Template component type
@@ -64,6 +64,7 @@ export interface Template {
 	defaultProps?: Record<string, any>;
 	useCases?: string[];
 	dependencies?: string[];
+	template: TemplateComponent;
 }
 
 /**
@@ -234,4 +235,3 @@ export interface TwitterCardData {
 	site?: string;
 	creator?: string;
 }
-

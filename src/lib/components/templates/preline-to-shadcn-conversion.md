@@ -135,7 +135,7 @@ Reference the [shadcn-svelte component catalog](https://shadcn-svelte.com/llms.t
 ```svelte
 <script>
 	import { Button } from '$lib/components/ui/button';
-	import { ChevronRight } from 'lucide-svelte';
+	import { ChevronRight } from '@lucide/svelte/icons';
 </script>
 
 <Button variant="default" class="gap-x-2">
@@ -601,7 +601,7 @@ Replace Preline's JavaScript with Svelte 5's modern reactivity system using rune
 ```svelte
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+	import { ChevronLeft, ChevronRight } from '@lucide/svelte/icons';
 
 	interface PaginationProps {
 		currentPage?: number;
@@ -831,7 +831,7 @@ Before marking a conversion complete, verify:
 - [ ] Mindhyv theme variables used consistently
 - [ ] Light and dark modes both work correctly
 - [ ] Spacing and typography align with design system
-- [ ] Icons from lucide-svelte, not embedded SVGs
+- [ ] Icons from @lucide/svelte/icons, not embedded SVGs
 
 **Responsiveness**
 
