@@ -274,7 +274,37 @@ export const TESTIMONIALS_REGISTRY: Template[] = [
 		useCases: ['B2B Testimonials', 'Enterprise Reviews', 'Partner Feedback'],
 		dependencies: ['shadcn-svelte'],
 		defaultProps: {
-			testimonials: []
+			testimonials: [
+				{
+					quote:
+						'This solution has transformed how we approach our business. The ROI was evident within the first quarter.',
+					author: 'Sarah Johnson',
+					title: 'CEO',
+					companyLogo:
+						'<svg class="h-8" viewBox="0 0 120 32" fill="currentColor"><text x="0" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Acme Inc</text></svg>',
+					avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100',
+					avatarFallback: 'SJ'
+				},
+				{
+					quote:
+						'Exceptional service and support. The team went above and beyond to ensure our success.',
+					author: 'Michael Chen',
+					title: 'CTO',
+					companyLogo:
+						'<svg class="h-8" viewBox="0 0 120 32" fill="currentColor"><text x="0" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">TechCorp</text></svg>',
+					avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100',
+					avatarFallback: 'MC'
+				},
+				{
+					quote: 'A game-changer for our industry. We have seen a 200% increase in productivity.',
+					author: 'Emily Rodriguez',
+					title: 'Operations Director',
+					companyLogo:
+						'<svg class="h-8" viewBox="0 0 120 32" fill="currentColor"><text x="0" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">GlobalCo</text></svg>',
+					avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100',
+					avatarFallback: 'ER'
+				}
+			]
 		},
 		template: TestimonialsWithCompanyLogos
 	},
@@ -367,4 +397,3 @@ export const TESTIMONIALS_REGISTRY: Template[] = [
 		template: TestimonialsCompactList
 	}
 ];
-

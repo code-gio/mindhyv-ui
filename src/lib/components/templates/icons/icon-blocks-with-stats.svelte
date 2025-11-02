@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { cn } from '../utils';
 	import { getTemplateDefaults } from '../template-registry';
-	import type { Icon as LucideIcon } from '@lucide/svelte';
+	import type { Icon as IconType } from '@lucide/svelte';
 
 	interface IconBlock {
-		icon: typeof LucideIcon;
+		icon: typeof IconType;
 		stat: string;
 		title: string;
 		description: string;
@@ -24,7 +24,9 @@
 	<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 		{#each blocks as block}
 			<!-- Stats -->
-			<div class="flex flex-col rounded-xl border border-gray-200 bg-white p-4 text-center md:p-5 dark:border-neutral-700 dark:bg-primary">
+			<div
+				class="flex flex-col rounded-xl border border-gray-200 bg-white p-4 text-center md:p-5 dark:border-neutral-700 dark:bg-primary"
+			>
 				<div class="flex items-center justify-center gap-x-2">
 					<block.icon class="size-6 shrink-0 text-muted-foreground" />
 					<div class="text-3xl font-semibold text-gray-800 sm:text-4xl dark:text-neutral-200">
@@ -45,4 +47,3 @@
 	</div>
 </div>
 <!-- End Icon Blocks -->
-

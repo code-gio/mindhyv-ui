@@ -69,10 +69,12 @@
 							{#if showActions}
 								<TableCell>
 									<DropdownMenu>
-										<DropdownMenuTrigger asChild let:builder>
-											<Button variant="ghost" size="icon" builders={[builder]}>
-												<MoreHorizontal class="size-4" />
-											</Button>
+										<DropdownMenuTrigger>
+											{#snippet children()}
+												<Button variant="ghost" size="icon">
+													<MoreHorizontal class="size-4" />
+												</Button>
+											{/snippet}
 										</DropdownMenuTrigger>
 										<DropdownMenuContent align="end">
 											<DropdownMenuItem>

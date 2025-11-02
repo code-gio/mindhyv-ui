@@ -2,10 +2,10 @@
 	import { ChevronRight } from '@lucide/svelte/icons';
 	import { cn } from '../utils';
 	import { getTemplateDefaults } from '../template-registry';
-	import type { Icon as LucideIcon } from '@lucide/svelte';
+	import type { Icon as IconType } from '@lucide/svelte';
 
 	interface IconBlock {
-		icon: typeof LucideIcon;
+		icon: typeof IconType;
 		title: string;
 		description: string;
 		linkText?: string;
