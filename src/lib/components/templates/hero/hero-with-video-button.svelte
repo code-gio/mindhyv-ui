@@ -30,9 +30,12 @@
 	<div class="mx-auto max-w-340 px-4 py-10 sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h1 class="block text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
-				{title} <span class="text-primary">{highlightText}</span>
+				{title}
+				{#if highlightText}
+					<span class="block text-primary">{highlightText}</span>
+				{/if}
 			</h1>
-			<p class="mt-3 text-lg text-muted-foreground">{description}</p>
+			<p class="mt-3 text-lg text-foreground">{description}</p>
 		</div>
 
 		<div class="relative mx-auto mt-10 max-w-5xl">
@@ -47,9 +50,9 @@
 						href={videoHref}
 						onclick={onVideoClick}
 						variant="outline"
-						class="inline-flex items-center gap-x-2 rounded-full border-border bg-background px-4 py-3 text-sm font-medium text-foreground shadow-2xs hover:bg-muted focus:bg-muted focus:outline-hidden"
+						class="inline-flex items-center gap-x-2 rounded-full border border-transparent bg-white px-4 py-3 text-sm font-semibold text-foreground shadow-2xs transition-colors hover:bg-white/90 focus-visible:ring-primary/40"
 					>
-						<Play class="size-4 shrink-0 fill-current" />
+						<Play class="size-4 shrink-0" />
 						{videoButtonText}
 					</Button>
 				</div>

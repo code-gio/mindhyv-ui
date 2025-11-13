@@ -103,8 +103,12 @@
 		<div class="mt-8 flex justify-center gap-3">
 			<Button
 				href={ctaPrimaryHref}
+				variant="default"
 				onclick={handlePrimaryClick}
-				class="inline-flex items-center justify-center gap-x-3 text-center text-sm font-medium"
+				class={cn(
+					'inline-flex items-center justify-center gap-x-3 text-center text-sm font-semibold',
+					'bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60'
+				)}
 			>
 				{ctaPrimaryText}
 				<ChevronRight class="size-4 shrink-0" />
@@ -146,7 +150,7 @@
 			</svg>
 			<a
 				href={guideHref}
-				class="inline-flex items-center gap-x-1 text-sm font-medium text-primary decoration-2 hover:underline focus:underline focus:outline-hidden"
+				class="inline-flex items-center gap-x-1 text-sm font-semibold text-primary decoration-2 transition-colors hover:text-primary/85 hover:underline focus:text-primary/85 focus:underline focus:outline-hidden"
 			>
 				{guideText}
 				<ChevronRight class="size-4 shrink-0" />

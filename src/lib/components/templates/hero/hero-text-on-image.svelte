@@ -14,13 +14,13 @@
 	// Get defaults from template registry (single source of truth)
 	const DEFAULTS = getTemplateDefaults('hero-text-on-image') || {};
 
-	let {
-		title = DEFAULTS.title,
-		backgroundImage = DEFAULTS.backgroundImage,
-		textPosition = DEFAULTS.textPosition,
-		maxTextWidth = DEFAULTS.maxTextWidth,
-		containerPadding = DEFAULTS.containerPadding,
-		roundedCorners = DEFAULTS.roundedCorners
+let {
+	title = DEFAULTS.title,
+	backgroundImage = DEFAULTS.backgroundImage,
+	textPosition = DEFAULTS.textPosition ?? 'bottom-left',
+	maxTextWidth = DEFAULTS.maxTextWidth,
+	containerPadding = DEFAULTS.containerPadding,
+	roundedCorners = DEFAULTS.roundedCorners
 	}: HeroTextOnImageProps = $props();
 
 	// Derived position classes

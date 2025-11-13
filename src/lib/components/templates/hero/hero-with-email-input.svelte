@@ -23,7 +23,21 @@
 		onSubmit?: (email: string) => void;
 	}
 
-	const DEFAULTS = getTemplateDefaults('hero-with-email-input') || {};
+const DEFAULTS = getTemplateDefaults('hero-with-email-input') || {};
+const DEFAULT_PLACEHOLDER_LOGOS: ClientLogo[] = [
+	{
+		name: 'Placeholder 1',
+		svg: '<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="40" rx="12" fill="currentColor" opacity="0.12"/><path d="M32 12h8l5 9.5 5-9.5h8l-9 16h-8Zm30 0c5.52 0 10 4.48 10 10s-4.48 10-10 10-10-4.48-10-10 4.48-10 10-10Zm0 6c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4Zm22-6h8l6 6.5 6-6.5h8l-10 11v5h-8v-5Z" fill="currentColor"/></svg>'
+	},
+	{
+		name: 'Placeholder 2',
+		svg: '<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="40" rx="12" fill="currentColor" opacity="0.08"/><path d="M24 12h8l6 10 6-10h8l-10 16h-8Zm32 0h16v6h-10v2h8v6h-8v2h10v6H56Zm30 0h8l6 6 6-6h8l-10 10v6h-8v-6Z" fill="currentColor"/></svg>'
+	},
+	{
+		name: 'Placeholder 3',
+		svg: '<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="40" rx="12" fill="currentColor" opacity="0.06"/><path d="M30 12h10l-7 16h-10Zm14 0h6v16h-6Zm12 0h6l4 10 4-10h6l-7 16h-6Zm28 0c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8Zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Z" fill="currentColor"/></svg>'
+	}
+];
 
 	let {
 		title = DEFAULTS.title,
@@ -33,7 +47,9 @@
 		ctaHref = DEFAULTS.ctaHref,
 		trustedByText = DEFAULTS.trustedByText,
 		showLogos = DEFAULTS.showLogos,
-		clientLogos = DEFAULTS.clientLogos,
+		clientLogos = (DEFAULTS.clientLogos && DEFAULTS.clientLogos.length > 0
+			? DEFAULTS.clientLogos
+			: DEFAULT_PLACEHOLDER_LOGOS),
 		imageSrc = DEFAULTS.imageSrc,
 		imageAlt = DEFAULTS.imageAlt,
 		onSubmit
@@ -56,7 +72,7 @@
 			<h1 class="block text-3xl font-bold text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
 				{title}
 			</h1>
-			<p class="mt-3 text-lg text-muted-foreground">{description}</p>
+			<p class="mt-3 text-lg text-foreground">{description}</p>
 
 			<form
 				onsubmit={handleSubmit}
@@ -77,7 +93,8 @@
 				<Button
 					type="submit"
 					href={ctaHref}
-					class="inline-flex w-full items-center justify-center gap-x-2 px-4 py-3 text-sm font-medium sm:w-auto"
+					variant="default"
+					class="inline-flex w-full items-center justify-center gap-x-2 px-4 py-3 text-sm font-semibold bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60 sm:w-auto"
 				>
 					{ctaText}
 				</Button>

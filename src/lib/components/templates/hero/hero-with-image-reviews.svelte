@@ -96,13 +96,21 @@
 
 			<!-- Buttons -->
 			<div class="mt-7 grid w-full gap-3 sm:inline-flex">
-				<Button href={ctaPrimaryHref} class="gap-x-2" onclick={() => handleCtaClick('primary')}>
+				<Button
+					href={ctaPrimaryHref}
+					variant="default"
+					class={cn(
+						'gap-x-2 bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60'
+					)}
+					onclick={() => handleCtaClick('primary')}
+				>
 					{ctaPrimaryText}
 					<ChevronRight class="size-4 shrink-0" />
 				</Button>
 				<Button
 					href={ctaSecondaryHref}
 					variant="outline"
+					class="border-primary text-primary transition-colors hover:bg-primary/10 focus-visible:ring-primary/40"
 					onclick={() => handleCtaClick('secondary')}
 				>
 					{ctaSecondaryText}

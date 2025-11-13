@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { ChevronRight } from '@lucide/svelte/icons';
+	import { ChevronRight, Figma } from '@lucide/svelte/icons';
 	import { getTemplateDefaults } from '../template-registry';
 
 	interface HeroWithGradientBgProps {
@@ -37,7 +37,7 @@
 			class="h-175 w-100 -translate-x-40 rotate-[-60deg] transform bg-linear-to-r from-primary/30 to-accent/20 blur-3xl"
 		></div>
 		<div
-			class="rounded-fulls h-200 w-[1440px] origin-top-left -translate-x-60 -rotate-12 bg-linear-to-tl from-muted via-muted to-muted blur-3xl"
+			class="rounded-fulls h-200 w-[1440px] origin-top-left -translate-x-60 -rotate-12 bg-linear-to-tl from-primary/30 via-accent/25 to-background/30 blur-3xl"
 		></div>
 	</div>
 	<!-- End Gradients -->
@@ -52,13 +52,15 @@
 				<!-- Title -->
 				<div class="mt-5 max-w-2xl">
 					<h1 class="block text-4xl font-semibold text-foreground md:text-5xl lg:text-6xl">
-						{title}
+						<span class="bg-linear-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
+							{title}
+						</span>
 					</h1>
 				</div>
 				<!-- End Title -->
 
 				<div class="mt-5 max-w-3xl">
-					<p class="text-lg text-muted-foreground">{description}</p>
+					<p class="text-lg text-foreground">{description}</p>
 				</div>
 
 				<!-- Buttons -->
@@ -66,7 +68,8 @@
 					<Button
 						href={ctaPrimaryHref}
 						onclick={() => onCtaClick?.('primary')}
-						class="inline-flex items-center gap-x-2 px-4 py-3 text-sm font-medium"
+						variant="default"
+						class="inline-flex items-center gap-x-2 px-4 py-3 text-sm font-semibold bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
 					>
 						{ctaPrimaryText}
 						<ChevronRight class="size-4 shrink-0" />
@@ -81,6 +84,8 @@
 							<div class="size-4 shrink-0">
 								{@html ctaSecondaryIcon}
 							</div>
+						{:else}
+							<Figma class="size-4 shrink-0 text-primary" />
 						{/if}
 						{ctaSecondaryText}
 					</Button>

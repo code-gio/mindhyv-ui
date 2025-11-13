@@ -63,7 +63,8 @@
 			<Button
 				href={ctaHref}
 				onclick={onCtaClick}
-				class="inline-flex items-center justify-center gap-x-3 rounded-full px-6 py-3 text-center text-sm font-medium shadow-lg"
+				variant="default"
+				class="inline-flex items-center justify-center gap-x-3 rounded-full px-6 py-3 text-center text-sm font-semibold shadow-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
 			>
 				{ctaText}
 				<ChevronRight class="size-4 shrink-0" />

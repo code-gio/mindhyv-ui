@@ -104,7 +104,7 @@
 									<div class="mt-5">
 										<a
 											href={slide.ctaHref}
-											class="inline-flex items-center gap-x-2 rounded-xl border border-transparent bg-white px-3 py-2 text-sm font-medium text-black hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+											class="inline-flex items-center gap-x-2 rounded-xl border border-transparent bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus:bg-primary/90 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
 										>
 											{slide.ctaText}
 										</a>

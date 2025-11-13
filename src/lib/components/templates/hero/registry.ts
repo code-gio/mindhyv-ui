@@ -194,11 +194,11 @@ export const HERO_REGISTRY: Template[] = [
 		dependencies: ['shadcn-svelte'],
 		defaultProps: {
 			title: ' Transforming ideas into reality',
-			highlightText: 'Preline Agency:',
+			highlightText: 'Mindhyv Agency:',
 			highlightColor: 'text-[#ff0]',
 			description:
 				'It is a creative hub where imagination meets craftsmanship to transform ideas into tangible realities.',
-			backgroundColor: 'bg-neutral-900',
+			backgroundColor: '',
 			showClients: true,
 			clientsHeading: 'Trusted by Open Source, enterprise, and more than 99,000 of you',
 			maxWidth: 'max-w-5xl',
@@ -265,8 +265,8 @@ export const HERO_REGISTRY: Template[] = [
 			packageManager: 'npm',
 			guideText: 'Installation Guide',
 			guideHref: '/docs',
-			backgroundImageLight: 'https://preline.co/assets/svg/examples/polygon-bg-element.svg',
-			backgroundImageDark: 'https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg'
+			backgroundImageLight: 'https://Mindhyv.co/assets/svg/examples/polygon-bg-element.svg',
+			backgroundImageDark: 'https://Mindhyv.co/assets/svg/examples-dark/polygon-bg-element.svg'
 		},
 		template: HeroCenteredWithPolygon
 	},
@@ -397,8 +397,8 @@ export const HERO_REGISTRY: Template[] = [
 			description: 'Mindhyv is a large open-source project, crafted with Svelte and shadcn-svelte.',
 			ctaText: 'Continue with Github',
 			ctaHref: '#',
-			backgroundImageLight: 'https://preline.co/assets/svg/examples/squared-bg-element.svg',
-			backgroundImageDark: 'https://preline.co/assets/svg/examples-dark/squared-bg-element.svg'
+			backgroundImageLight: 'https://Mindhyv.co/assets/svg/examples/squared-bg-element.svg',
+			backgroundImageDark: 'https://Mindhyv.co/assets/svg/examples-dark/squared-bg-element.svg'
 		},
 		template: HeroWithSquaredBg
 	},
