@@ -34,10 +34,10 @@
 	<!-- Gradients -->
 	<div aria-hidden="true" class="absolute start-1/2 -top-96 flex -translate-x-1/2 transform">
 		<div
-			class="h-175 w-100 -translate-x-40 rotate-[-60deg] transform bg-linear-to-r from-primary/30 to-accent/20 blur-3xl"
+			class="h-175 w-100 -translate-x-40 rotate-[-60deg] transform bg-linear-to-r from-violet-300/50 to-purple-100 blur-3xl dark:from-violet-900/50 dark:to-purple-900"
 		></div>
 		<div
-			class="rounded-fulls h-200 w-[1440px] origin-top-left -translate-x-60 -rotate-12 bg-linear-to-tl from-primary/30 via-accent/25 to-background/30 blur-3xl"
+			class="rounded-fulls h-200 w-[1440px] origin-top-left -translate-x-60 -rotate-12 bg-linear-to-tl from-blue-50 via-blue-100 to-blue-50 blur-3xl dark:from-indigo-900/70 dark:via-indigo-900/70 dark:to-blue-900/70"
 		></div>
 	</div>
 	<!-- End Gradients -->
@@ -52,14 +52,16 @@
 				<!-- Title -->
 				<div class="mt-5 max-w-2xl">
 					<h1 class="block text-4xl font-semibold text-foreground md:text-5xl lg:text-6xl">
-						<span class="bg-linear-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
+						<span
+							class="bg-linear-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent"
+						>
 							{title}
 						</span>
 					</h1>
 				</div>
 				<!-- End Title -->
 
-				<div class="mt-5 max-w-3xl">
+				<div class="mx-auto mt-5 max-w-xl">
 					<p class="text-lg text-foreground">{description}</p>
 				</div>
 
@@ -69,7 +71,7 @@
 						href={ctaPrimaryHref}
 						onclick={() => onCtaClick?.('primary')}
 						variant="default"
-						class="inline-flex items-center gap-x-2 px-4 py-3 text-sm font-semibold bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
+						class="inline-flex items-center gap-x-2 bg-primary px-4 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
 					>
 						{ctaPrimaryText}
 						<ChevronRight class="size-4 shrink-0" />
@@ -78,14 +80,15 @@
 						href={ctaSecondaryHref}
 						onclick={() => onCtaClick?.('secondary')}
 						variant="ghost"
-						class="inline-flex items-center gap-x-2 px-4 py-3 text-sm font-medium"
+						class="inline-flex items-center gap-x-2 px-4 py-4 text-sm font-medium"
 					>
 						{#if ctaSecondaryIcon}
 							<div class="size-4 shrink-0">
 								{@html ctaSecondaryIcon}
 							</div>
 						{:else}
-							<Figma class="size-4 shrink-0 text-primary" />
+							<!-- <Figma class="size-4 shrink-0 text-primary" /> -->
+							<img src="/figma.svg" alt="Figma" class="size-4 shrink-0" />
 						{/if}
 						{ctaSecondaryText}
 					</Button>

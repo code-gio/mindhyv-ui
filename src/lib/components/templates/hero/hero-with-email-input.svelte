@@ -85,7 +85,7 @@ const DEFAULT_PLACEHOLDER_LOGOS: ClientLogo[] = [
 						id="hero-input"
 						name="hero-input"
 						bind:value={email}
-						class="block w-full min-w-80 rounded-md px-4 py-2.5 sm:py-3 sm:text-sm"
+						class="block w-full min-w-80 rounded-md px-4 py-2.5 sm:py-3 sm:text-sm h-12"
 						placeholder={inputPlaceholder}
 						required
 					/>
@@ -94,7 +94,7 @@ const DEFAULT_PLACEHOLDER_LOGOS: ClientLogo[] = [
 					type="submit"
 					href={ctaHref}
 					variant="default"
-					class="inline-flex w-full items-center justify-center gap-x-2 px-4 py-3 text-sm font-semibold bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60 sm:w-auto"
+					class="inline-flex w-full items-center justify-center gap-x-2 px-4 h-12 py-3 text-sm font-semibold bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60 sm:w-auto"
 				>
 					{ctaText}
 				</Button>

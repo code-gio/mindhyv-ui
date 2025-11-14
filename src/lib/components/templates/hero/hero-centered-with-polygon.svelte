@@ -88,7 +88,7 @@
 		<div class="mx-auto mt-5 max-w-2xl text-center">
 			<h1 class="block text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
 				{title}
-				<span class="text-primary">
+				<span class="bg-clip-text bg-linear-to-tl from-blue-600 to-violet-600 text-transparent">
 					{gradientText}
 				</span>
 			</h1>
@@ -107,7 +107,7 @@
 				onclick={handlePrimaryClick}
 				class={cn(
 					'inline-flex items-center justify-center gap-x-3 text-center text-sm font-semibold',
-					'bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60'
+					'inline-flex justify-center items-center gap-x-3 text-center bg-linear-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-md focus:outline-hidden focus:from-violet-600 focus:to-blue-600 py-5.5 px-4'
 				)}
 			>
 				{ctaPrimaryText}
@@ -150,7 +150,7 @@
 			</svg>
 			<a
 				href={guideHref}
-				class="inline-flex items-center gap-x-1 text-sm font-semibold text-primary decoration-2 transition-colors hover:text-primary/85 hover:underline focus:text-primary/85 focus:underline focus:outline-hidden"
+				class="inline-flex items-center gap-x-1 text-sm font-normal text-primary decoration-2 transition-colors hover:text-primary/85 hover:underline focus:text-primary/85 focus:underline focus:outline-hidden"
 			>
 				{guideText}
 				<ChevronRight class="size-4 shrink-0" />

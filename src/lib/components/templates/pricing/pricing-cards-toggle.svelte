@@ -18,6 +18,16 @@
 		isPopular?: boolean;
 	}
 
+	interface ComparisonFeature {
+		name: string;
+		plans: Record<string, boolean>;
+	}
+
+	interface ComparisonCategory {
+		name: string;
+		features: ComparisonFeature[];
+	}
+
 	interface PricingCardsToggleProps {
 		title?: string;
 		description?: string;
@@ -25,6 +35,8 @@
 		annualLabel?: string;
 		annualSavings?: string;
 		plans?: PricingPlan[];
+		comparisonTitle?: string;
+		comparisonCategories?: ComparisonCategory[];
 		onPlanClick?: (planName: string, isAnnual: boolean) => void;
 	}
 
@@ -37,6 +49,8 @@
 		annualLabel = DEFAULTS.annualLabel,
 		annualSavings = DEFAULTS.annualSavings,
 		plans = DEFAULTS.plans,
+		comparisonTitle = DEFAULTS.comparisonTitle,
+		comparisonCategories = DEFAULTS.comparisonCategories,
 		onPlanClick
 	}: PricingCardsToggleProps = $props();
 
@@ -99,7 +113,7 @@
 					{#if plan.isPopular}
 						<Badge
 							variant="default"
-							class="mb-3 inline-block self-center px-3 py-1.5 text-xs font-semibold uppercase"
+							class="mb-3 inline-block mx-auto self-center px-3 py-1.5 text-xs font-semibold uppercase"
 						>
 							Most popular
 						</Badge>
@@ -131,7 +145,7 @@
 						href={plan.ctaHref}
 						onclick={() => onPlanClick?.(plan.name, isAnnual)}
 						variant={plan.isPopular ? 'default' : 'outline'}
-						class="mt-5 w-full justify-center"
+						class="mt-5 w-full justify-center py-6"
 					>
 						{plan.ctaText}
 					</Button>
@@ -140,4 +154,147 @@
 		{/each}
 	</div>
 	<!-- End Grid -->
+
+	<!-- Comparison table -->
+	{#if comparisonCategories && comparisonCategories.length > 0}
+		<div class="mt-20 lg:mt-32">
+			<div class="mb-10 lg:mb-20 lg:text-center">
+				<h3 class="text-2xl font-semibold text-foreground">{comparisonTitle}</h3>
+			</div>
+
+			<!-- xs to lg -->
+			<div class="space-y-24 lg:hidden">
+				{#each plans as plan}
+					<section>
+						<div class="mb-4 px-4">
+							<h2 class="text-lg font-medium leading-6 text-foreground">{plan.name}</h2>
+						</div>
+
+						{#each comparisonCategories as category}
+							<table class="w-full">
+								<caption
+									class="border-t border-border bg-muted py-3 px-4 text-start text-sm font-bold text-foreground"
+								>
+									{category.name}
+								</caption>
+								<thead>
+									<tr>
+										<th class="sr-only" scope="col">Feature</th>
+										<th class="sr-only" scope="col">Included</th>
+									</tr>
+								</thead>
+								<tbody class="divide-y divide-border">
+									{#each category.features as feature}
+										<tr class="border-t border-border">
+											<th
+												class="whitespace-nowrap py-5 px-4 text-start text-sm font-normal text-muted-foreground"
+												scope="row"
+											>
+												{feature.name}
+											</th>
+											<td class="py-5 pe-4">
+												{#if feature.plans[plan.name]}
+													<Check class="ms-auto size-5 shrink-0 text-primary" />
+													<span class="sr-only">Yes</span>
+												{:else}
+													<svg
+														class="ms-auto size-5 shrink-0 text-muted-foreground"
+														xmlns="http://www.w3.org/2000/svg"
+														width="24"
+														height="24"
+														viewBox="0 0 24 24"
+														fill="none"
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													>
+														<path d="M5 12h14" />
+													</svg>
+													<span class="sr-only">No</span>
+												{/if}
+											</td>
+										</tr>
+									{/each}
+								</tbody>
+							</table>
+						{/each}
+					</section>
+				{/each}
+			</div>
+			<!-- End xs to lg -->
+
+			<!-- lg+ -->
+			<div class="hidden lg:block">
+				<table class="h-px w-full">
+					<caption class="sr-only">Pricing plan comparison</caption>
+					<thead class="sticky inset-x-0 top-0 bg-background">
+						<tr>
+							<th class="py-4 ps-6 pe-6 text-start text-sm font-medium text-foreground" scope="col">
+								<span class="sr-only">Feature by</span>
+								<span>Plans</span>
+							</th>
+							{#each plans as plan}
+								<th
+									class="w-1/4 py-4 px-6 text-center text-lg font-medium leading-6 text-foreground"
+									scope="col"
+								>
+									{plan.name}
+								</th>
+							{/each}
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-border border-t border-border">
+						{#each comparisonCategories as category}
+							<tr>
+								<th
+									class="bg-muted py-3 ps-6 text-start font-bold text-foreground"
+									colspan={plans.length + 1}
+									scope="colgroup"
+								>
+									{category.name}
+								</th>
+							</tr>
+							{#each category.features as feature}
+								<tr>
+									<th
+										class="whitespace-nowrap py-5 ps-6 pe-6 text-start text-sm font-normal text-muted-foreground"
+										scope="row"
+									>
+										{feature.name}
+									</th>
+									{#each plans as plan}
+										<td class="py-5 px-6">
+											{#if feature.plans[plan.name]}
+												<Check class="mx-auto size-5 shrink-0 text-primary" />
+												<span class="sr-only">Included in {plan.name}</span>
+											{:else}
+												<svg
+													class="mx-auto size-5 shrink-0 text-muted-foreground"
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												>
+													<path d="M5 12h14" />
+												</svg>
+												<span class="sr-only">Not included in {plan.name}</span>
+											{/if}
+										</td>
+									{/each}
+								</tr>
+							{/each}
+						{/each}
+					</tbody>
+				</table>
+			</div>
+			<!-- End lg+ -->
+		</div>
+	{/if}
+	<!-- End Comparison table -->
 </div>

@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { getTemplateDefaults } from '../template-registry';
 
@@ -12,11 +13,19 @@
 		avatarUrl: string;
 	}
 
+	interface ClientLogo {
+		name: string;
+		svg: string;
+	}
+
 	interface SignupFormData {
 		firstName: string;
 		lastName: string;
 		email: string;
+		companyName: string;
 		password: string;
+		confirmPassword: string;
+		acceptTerms: boolean;
 	}
 
 	interface HeroSignupFormProps {
@@ -28,8 +37,15 @@
 		signInHref?: string;
 		googleSignupText?: string;
 		submitButtonText?: string;
+		termsText?: string;
+		termsLinkText?: string;
+		termsHref?: string;
 		showTestimonial?: boolean;
 		testimonial?: Testimonial;
+		showClients?: boolean;
+		clientsCount?: string;
+		clientsText?: string;
+		clientLogos?: ClientLogo[];
 		onGoogleSignup?: () => void;
 		onSubmit?: (data: SignupFormData) => void;
 	}
@@ -45,8 +61,15 @@
 		signInHref = DEFAULTS.signInHref,
 		googleSignupText = DEFAULTS.googleSignupText,
 		submitButtonText = DEFAULTS.submitButtonText,
+		termsText = DEFAULTS.termsText,
+		termsLinkText = DEFAULTS.termsLinkText,
+		termsHref = DEFAULTS.termsHref,
 		showTestimonial = DEFAULTS.showTestimonial,
 		testimonial = DEFAULTS.testimonial,
+		showClients = DEFAULTS.showClients,
+		clientsCount = DEFAULTS.clientsCount,
+		clientsText = DEFAULTS.clientsText,
+		clientLogos = DEFAULTS.clientLogos,
 		onGoogleSignup,
 		onSubmit
 	}: HeroSignupFormProps = $props();
@@ -55,7 +78,10 @@
 		firstName: '',
 		lastName: '',
 		email: '',
-		password: ''
+		companyName: '',
+		password: '',
+		confirmPassword: '',
+		acceptTerms: false
 	});
 
 	function handleSubmit(e: Event) {
@@ -207,7 +233,7 @@
 										required
 									/>
 								</div>
-								<div class="col-span-2">
+								<div>
 									<Label for="email" class="sr-only">Email</Label>
 									<Input
 										type="email"
@@ -218,18 +244,55 @@
 										required
 									/>
 								</div>
+								<div>
+									<Label for="company-name" class="sr-only">Company name</Label>
+									<Input
+										type="text"
+										id="company-name"
+										bind:value={formData.companyName}
+										placeholder="Company name"
+										class="w-full"
+										required
+									/>
+								</div>
 								<div class="col-span-2">
-									<Label for="password" class="sr-only">Password</Label>
+									<Label for="password" class="sr-only">New password</Label>
 									<Input
 										type="password"
 										id="password"
 										bind:value={formData.password}
-										placeholder="Password"
+										placeholder="New password"
+										class="w-full"
+										required
+									/>
+								</div>
+								<div class="col-span-2">
+									<Label for="confirm-password" class="sr-only">Confirm password</Label>
+									<Input
+										type="password"
+										id="confirm-password"
+										bind:value={formData.confirmPassword}
+										placeholder="Confirm password"
 										class="w-full"
 										required
 									/>
 								</div>
 							</div>
+
+							<!-- Checkbox -->
+							<div class="flex items-center">
+								<Checkbox id="acceptTerms" bind:checked={formData.acceptTerms} />
+								<Label for="acceptTerms" class="ms-3 text-sm">
+									{termsText}
+									<a
+										class="font-medium text-primary decoration-2 hover:underline focus:underline focus:outline-hidden"
+										href={termsHref}
+									>
+										{termsLinkText}
+									</a>
+								</Label>
+							</div>
+							<!-- End Checkbox -->
 
 							<div class="grid">
 								<Button type="submit" class="w-full justify-center">
@@ -243,5 +306,29 @@
 			</div>
 		</div>
 		<!-- End Grid -->
+
+		<!-- Clients Section -->
+		{#if showClients}
+			<div
+				class="mt-6 flex items-center gap-x-1.5 py-3 text-sm text-foreground after:ms-6 after:flex-1 after:border-t after:border-border md:mt-12"
+			>
+				<span
+					class="bg-gradient-to-l from-primary to-primary/60 bg-clip-text font-semibold text-transparent"
+				>
+					{clientsCount}
+				</span>
+				{clientsText}
+			</div>
+
+			<!-- Clients -->
+			<div class="flex flex-wrap gap-x-6 sm:gap-x-12 lg:gap-x-24">
+				{#each clientLogos as logo}
+					<div class="h-auto w-16 py-3 text-muted-foreground md:w-20 lg:w-24 lg:py-5">
+						{@html logo.svg}
+					</div>
+				{/each}
+			</div>
+			<!-- End Clients -->
+		{/if}
 	</div>
 </div>

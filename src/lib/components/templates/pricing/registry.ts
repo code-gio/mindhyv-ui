@@ -86,8 +86,82 @@ export const PRICING_REGISTRY: Template[] = [
 					priceAnnual: 119,
 					description: 'Advanced features for scaling businesses',
 					features: ['Unlimited users', 'Enterprise features', 'Dedicated support'],
-					ctaText: 'Contact us',
+					ctaText: 'Sign up',
 					ctaHref: '#'
+				}
+			],
+			comparisonTitle: 'Compare plans',
+			comparisonCategories: [
+				{
+					name: 'Financial data',
+					features: [
+						{
+							name: 'Open/High/Low/Close',
+							plans: { Free: true, Startup: true, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Price-volume difference indicator',
+							plans: { Free: false, Startup: true, Team: true, Enterprise: true }
+						}
+					]
+				},
+				{
+					name: 'On-chain data',
+					features: [
+						{
+							name: 'Network growth',
+							plans: { Free: true, Startup: false, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Average token age consumed',
+							plans: { Free: true, Startup: false, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Exchange flow',
+							plans: { Free: false, Startup: false, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Total ERC20 exchange funds flow',
+							plans: { Free: false, Startup: false, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Transaction volume',
+							plans: { Free: true, Startup: true, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Total circulation (beta)',
+							plans: { Free: false, Startup: true, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Velocity of tokens (beta)',
+							plans: { Free: true, Startup: true, Team: false, Enterprise: true }
+						},
+						{
+							name: 'ETH gas used',
+							plans: { Free: false, Startup: true, Team: true, Enterprise: true }
+						}
+					]
+				},
+				{
+					name: 'Social data',
+					features: [
+						{
+							name: 'Dev activity',
+							plans: { Free: false, Startup: true, Team: false, Enterprise: true }
+						},
+						{
+							name: 'Topic search',
+							plans: { Free: true, Startup: true, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Relative social dominance',
+							plans: { Free: false, Startup: false, Team: true, Enterprise: true }
+						},
+						{
+							name: 'Total social volume',
+							plans: { Free: true, Startup: true, Team: false, Enterprise: true }
+						}
+					]
 				}
 			]
 		},

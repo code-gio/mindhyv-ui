@@ -26,13 +26,37 @@ let {
 	// Derived position classes
 	const positionClasses = $derived(() => {
 		const positions = {
-			'bottom-left': 'items-end justify-start',
+			'bottom-left': 'items-start justify-end',
 			'bottom-right': 'items-end justify-end',
 			'top-left': 'items-start justify-start',
-			'top-right': 'items-start justify-end',
+			'top-right': 'items-end justify-start',
 			center: 'items-center justify-center'
 		};
 		return positions[textPosition] || positions['bottom-left'];
+	});
+
+	// Derived padding classes based on position
+	const paddingClasses = $derived(() => {
+		const paddings = {
+			'bottom-left': 'ps-5 pb-5 md:ps-10 md:pb-10',
+			'bottom-right': 'pe-5 pb-5 md:pe-10 md:pb-10',
+			'top-left': 'ps-5 pt-5 md:ps-10 md:pt-10',
+			'top-right': 'pe-5 pt-5 md:pe-10 md:pt-10',
+			center: 'p-5 md:p-10'
+		};
+		return paddings[textPosition] || paddings['bottom-left'];
+	});
+
+	// Derived text alignment based on position
+	const textAlignmentClasses = $derived(() => {
+		const alignments = {
+			'bottom-left': 'text-left',
+			'bottom-right': 'text-right',
+			'top-left': 'text-left',
+			'top-right': 'text-right',
+			center: 'text-center'
+		};
+		return alignments[textPosition] || alignments['bottom-left'];
 	});
 </script>
 
@@ -48,8 +72,8 @@ let {
 		role="img"
 		aria-label={title}
 	>
-		<div class={cn('ps-5 pb-5 md:ps-10 md:pb-10', maxTextWidth)}>
-			<h1 class="text-xl text-primary-foreground md:text-3xl lg:text-5xl">
+		<div class={cn(paddingClasses(), maxTextWidth)}>
+			<h1 class={cn('text-xl text-primary-foreground md:text-3xl lg:text-5xl', textAlignmentClasses())}>
 				{title}
 			</h1>
 		</div>

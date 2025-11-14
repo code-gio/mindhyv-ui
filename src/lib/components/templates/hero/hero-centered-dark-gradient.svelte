@@ -64,10 +64,12 @@
 				href={ctaHref}
 				onclick={onCtaClick}
 				variant="default"
-				class="inline-flex items-center justify-center gap-x-3 rounded-full px-6 py-3 text-center text-sm font-semibold shadow-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
+				class="inline-flex justify-center items-center gap-x-3 text-center bg-linear-to-tl from-blue-600 to-violet-600 
+				shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm 
+				font-medium rounded-full focus:outline-hidden focus:shadow-blue-700/50 py-6 px-1 w-36"
 			>
 				{ctaText}
-				<ChevronRight class="size-4 shrink-0" />
+				<ChevronRight class="size-4 mt-[2px] shrink-0" />
 			</Button>
 		</div>
 		<!-- End Buttons -->

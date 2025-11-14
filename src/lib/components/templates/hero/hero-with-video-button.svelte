@@ -50,7 +50,7 @@
 						href={videoHref}
 						onclick={onVideoClick}
 						variant="outline"
-						class="inline-flex items-center gap-x-2 rounded-full border border-transparent bg-white px-4 py-3 text-sm font-semibold text-foreground shadow-2xs transition-colors hover:bg-white/90 focus-visible:ring-primary/40"
+						class="inline-flex items-center gap-x-2 rounded-full border border-transparent bg-white px-4 w-42 py-6 text-sm font-normal text-foreground shadow-2xs transition-colors hover:bg-white/90 focus-visible:ring-primary/40"
 					>
 						<Play class="size-4 shrink-0" />
 						{videoButtonText}

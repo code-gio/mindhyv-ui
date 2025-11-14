@@ -54,9 +54,12 @@
 </script>
 
 <div
-	class="relative overflow-hidden before:absolute before:start-1/2 before:top-0 before:-z-1 before:size-full before:-translate-x-1/2 before:transform before:bg-cover before:bg-top before:bg-no-repeat"
+	class="relative overflow-hidden before:absolute before:start-1/2 before:top-0 before:-z-1 before:size-full before:-translate-x-1/2 before:transform after:absolute after:inset-0 after:-z-1 after:bg-gradient-to-r after:from-background after:via-transparent after:to-background"
 	style="--bg-light: url('{backgroundImageLight}'); --bg-dark: url('{backgroundImageDark}');"
 	style:background-image="var(--bg-light)"
+	style:background-position="40% 0%"
+	style:background-repeat="no-repeat"
+	style:background-size="auto"
 	class:dark:before:bg-[--bg-dark]={true}
 	class:before:bg-[--bg-light]={true}
 >
@@ -103,7 +106,7 @@
 				href={ctaHref}
 				onclick={onCtaClick}
 				variant="default"
-				class="inline-flex items-center justify-center gap-x-3 rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
+				class="inline-flex items-center justify-center gap-x-3 rounded-full bg-primary px-12 w-52 h-12 py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-primary/60"
 			>
 				<Github class="size-4 shrink-0" />
 				{ctaText}

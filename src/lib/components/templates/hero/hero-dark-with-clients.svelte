@@ -70,12 +70,12 @@
 <div class={cn('overflow-hidden', backgroundColor)}>
 	<div class={cn('mx-auto px-4 pt-24 pb-24 lg:pt-32 xl:px-0', maxWidth)}>
 		<h1 class="text-5xl font-semibold text-foreground md:text-6xl">
-			<span class={cn('text-primary', highlightColor)}>{highlightText}</span>
+			<span class={cn('text[#FFFF00]', highlightColor)}>{highlightText}</span>
 			{' '}
 			<span class="text-foreground">{title}</span>
 		</h1>
 		<div class="mt-5 max-w-4xl">
-			<p class="text-lg text-foreground">
+			<p class="text-lg text-foreground/50">
 				{description}
 			</p>
 		</div>
@@ -85,10 +85,10 @@
 
 {#if showClients}
 	<!-- Clients -->
-	<div class={cn('relative overflow-hidden pt-4', backgroundColor)}>
+	<div class={cn('relative overflow-hidden pt-6 pb-1 ', backgroundColor)}>
 		{#if showWavePattern}
 			<svg
-				class="absolute start-1/2 -bottom-20 w-[1900px] -translate-x-1/2 transform text-primary/25"
+				class="absolute start-1/2 -bottom-20 w-[1900px] -translate-x-1/2 transform text-primary/25 "
 				width="2745"
 				height="488"
 				viewBox="0 0 2745 488"
@@ -97,69 +97,66 @@
 				aria-hidden="true"
 			>
 				<path
-					d="M0.5 330.864C232.505 403.801 853.749 527.683 1482.69 439.719C2111.63 351.756 2585.54 434.588 2743.87 487"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 308.873C232.505 381.81 853.749 505.692 1482.69 417.728C2111.63 329.765 2585.54 412.597 2743.87 465.009"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 286.882C232.505 359.819 853.749 483.701 1482.69 395.738C2111.63 307.774 2585.54 390.606 2743.87 443.018"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 264.891C232.505 337.828 853.749 461.71 1482.69 373.747C2111.63 285.783 2585.54 368.615 2743.87 421.027"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 242.9C232.505 315.837 853.749 439.719 1482.69 351.756C2111.63 263.792 2585.54 346.624 2743.87 399.036"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 220.909C232.505 293.846 853.749 417.728 1482.69 329.765C2111.63 241.801 2585.54 324.633 2743.87 377.045"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 198.918C232.505 271.855 853.749 395.737 1482.69 307.774C2111.63 219.81 2585.54 302.642 2743.87 355.054"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 176.927C232.505 249.864 853.749 373.746 1482.69 285.783C2111.63 197.819 2585.54 280.651 2743.87 333.063"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 154.937C232.505 227.873 853.749 351.756 1482.69 263.792C2111.63 175.828 2585.54 258.661 2743.87 311.072"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 132.946C232.505 205.882 853.749 329.765 1482.69 241.801C2111.63 153.837 2585.54 236.67 2743.87 289.082"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 110.955C232.505 183.891 853.749 307.774 1482.69 219.81C2111.63 131.846 2585.54 214.679 2743.87 267.091"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 88.9639C232.505 161.901 853.749 285.783 1482.69 197.819C2111.63 109.855 2585.54 192.688 2743.87 245.1"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 66.9729C232.505 139.91 853.749 263.792 1482.69 175.828C2111.63 87.8643 2585.54 170.697 2743.87 223.109"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 44.9819C232.505 117.919 853.749 241.801 1482.69 153.837C2111.63 65.8733 2585.54 148.706 2743.87 201.118"
-					stroke="currentColor"
-				/>
-				<path
-					d="M0.5 22.991C232.505 95.9276 853.749 219.81 1482.69 131.846C2111.63 43.8824 2585.54 126.715 2743.87 179.127"
-					stroke="currentColor"
-				/>
-				<path
 					d="M0.5 1C232.505 73.9367 853.749 197.819 1482.69 109.855C2111.63 21.8914 2585.54 104.724 2743.87 157.136"
 					stroke="currentColor"
 				/>
+				<path
+					d="M0.5 26C232.505 98.9367 853.749 222.819 1482.69 134.855C2111.63 46.8914 2585.54 129.724 2743.87 182.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 51C232.505 123.937 853.749 247.819 1482.69 159.855C2111.63 71.8914 2585.54 154.724 2743.87 207.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 76C232.505 148.937 853.749 272.819 1482.69 184.855C2111.63 96.8914 2585.54 179.724 2743.87 232.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 101C232.505 173.937 853.749 297.819 1482.69 209.855C2111.63 121.891 2585.54 204.724 2743.87 257.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 126C232.505 198.937 853.749 322.819 1482.69 234.855C2111.63 146.891 2585.54 229.724 2743.87 282.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 151C232.505 223.937 853.749 347.819 1482.69 259.855C2111.63 171.891 2585.54 254.724 2743.87 307.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 176C232.505 248.937 853.749 372.819 1482.69 284.855C2111.63 196.891 2585.54 279.724 2743.87 332.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 201C232.505 273.937 853.749 397.819 1482.69 309.855C2111.63 221.891 2585.54 304.724 2743.87 357.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 226C232.505 298.937 853.749 422.819 1482.69 334.855C2111.63 246.891 2585.54 329.724 2743.87 382.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 251C232.505 323.937 853.749 447.819 1482.69 359.855C2111.63 271.891 2585.54 354.724 2743.87 407.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 276C232.505 348.937 853.749 472.819 1482.69 384.855C2111.63 296.891 2585.54 379.724 2743.87 432.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 301C232.505 373.937 853.749 497.819 1482.69 409.855C2111.63 321.891 2585.54 404.724 2743.87 457.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 326C232.505 398.937 853.749 522.819 1482.69 434.855C2111.63 346.891 2585.54 429.724 2743.87 482.136"
+					stroke="currentColor"
+				/>
+				<path
+					d="M0.5 351C232.505 423.937 853.749 547.819 1482.69 459.855C2111.63 371.891 2585.54 454.724 2743.87 507.136"
+					stroke="currentColor"
+				/>
+				
 			</svg>
 		{/if}
 
@@ -175,13 +172,16 @@
 							{/each}
 						</p>
 					{:else}
-						<p class="text-sm font-medium tracking-[0.3em] text-foreground uppercase">
+						<!-- <p class="text-sm font-medium tracking-[0.3em] text-foreground uppercase">
 							{clientsHeading}
-						</p>
+							</p> -->
+						<h2 class="text-foreground/50 mb-8">
+							{clientsHeading}
+						</h2>
 					{/if}
 				</div>
 
-				<div class="flex flex-wrap items-center gap-x-10 gap-y-6">
+				<div class="flex flex-wrap items-center gap-x-10 gap-y-1  pt-6 pb-4 ">
 					{#each clientLogos as logo}
 						<div
 							class="h-auto w-20 text-foreground/70 md:w-24"

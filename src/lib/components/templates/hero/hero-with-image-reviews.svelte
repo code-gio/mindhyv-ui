@@ -76,6 +76,7 @@
 				return 'text-muted-foreground';
 		}
 	}
+	
 </script>
 
 <!-- Hero -->
